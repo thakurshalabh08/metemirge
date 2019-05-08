@@ -96,6 +96,15 @@ All output files for each sample will be placed in the `output/<project-dir>/<sa
 
 **1) Reconstruct marker sequences using EMIRGE.**
 
+This runs EMIRGE program with `emirge.py` script for reconstructing marker sequences using reference sequence database.
+
+Input: a) Filtered, cleaned, deinterleaved, paired-end fastq read files
+       b) Reference sequence database (fasta format)
+       c) Reference bowtie index file.
+
+Output: Reconstructed marker sequence file (fasta format)       
+
+
 **2) Rename marker sequence file.**
 
 **3) Blast marker sequence against reference sequence databases.**
