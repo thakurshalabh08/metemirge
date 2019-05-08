@@ -63,7 +63,7 @@ The numerical parameter values should be written without an quotes.
 | ncbi_taxdb | The sqlite database file storing taxonomy information from ncbi database (string) |
 | percent_identity_threshold | Specify identity threshold for filtering hits (decimal) |
 | query_coverage_threhshold | Specify query coverage threshold for filtering hits (decimal) |
-| **Select Best-Hit Parameters** |
+| **Best-Hit Parameters** |
 | db_priority | Specify list of blast databases in order of priority as ["db1", "db2"] (list) |
 | num_best_hit | Specify number of best hits to report from each database (integer) |
 
