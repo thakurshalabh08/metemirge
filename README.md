@@ -9,7 +9,10 @@ EMIRGE is a tool for reconstructing full-length marker gene sequences from micro
 
 Input: filtered and cleaned fastq files. 
 
-Output: ???
+Output: 
+1) Reconstructed marker sequences
+2) Taxonomy assignment
+3) Taxonomic Relative abundance
 
 ## Installation
 
@@ -68,6 +71,9 @@ The numerical parameter values should be written without an quotes.
 | num_best_hit | Specify number of best hits to report from each database (integer) |
 
 
+## Scripts folder
+
+ This folder contains customized scripts to run within the pipeline at each step.
 
 
 ## Running the pipeline on Synergy
@@ -88,14 +94,14 @@ All output files for each sample will be placed in the `output/<project-dir>/<sa
 
 ## Pipeline summary
 
-1) Reconstruct marker sequences using EMIRGE.
+**1) Reconstruct marker sequences using EMIRGE.**
 
-2) Rename marker sequence file.
+**2) Rename marker sequence file.**
 
-3) Blast marker sequence against reference sequence databases.
+**3) Blast marker sequence against reference sequence databases.**
 
-4) Parse Blast results.
+**4) Parse Blast results.**
 
-5) Select best blast hit.
+**5) Select best blast hit.**
 
-6) Prepare Input for Plot.
+**6) Prepare Input for Plot.**
