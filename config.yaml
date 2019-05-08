@@ -3,13 +3,13 @@
 # **********************************
 
 # List of files
-list_files: "/home/codewizard/Documents/projects/SnakeMake/ref_files/list_files.txt"
+list_files: "ref_files/list_files.txt"
 
 # EMIRGE parameters
-input_dir: "/home/codewizard/Documents/projects/SnakeMake/data/fastq/"
-project_dir: "/home/codewizard/Documents/projects/SnakeMake/output/SMK_TEST2/"
-fasta_db: "/home/codewizard/Documents/projects/SnakeMake/data/silva/SILVA_132_SSURef_Nr99_tax_silva_trunc.ge1200bp.le2000bp.0.97.fixed.fasta"
-bowtie_db: "/home/codewizard/Documents/projects/SnakeMake/data/silva/SILVA_132_SSURef_Nr99_tax_silva_trunc.ge1200bp.le2000bp.0.97.fixed"
+input_dir: "data/fastq/"
+project_dir: "output/project/"
+fasta_db: "data/silva/SILVA_132_SSURef_Nr99_tax_silva_trunc.ge1200bp.le2000bp.0.97.fixed.fasta"
+bowtie_db: "data/silva/SILVA_132_SSURef_Nr99_tax_silva_trunc.ge1200bp.le2000bp.0.97.fixed"
 max_read_length: 100
 insert_mean: 240
 insert_stddev: 100
@@ -20,7 +20,7 @@ num_iter_str: "05"
 num_threads: 28
 
 # BLAST parameters
-blast_db_dir: "/home/codewizard/Documents/projects/Metagenomics_Pipeline/data/blast_db/16S/"
+blast_db_dir: "data/blast_db/16S/"
 database: ["16SMicrobial","ure_16s"]
 evalue: 1e-05
 max_target_seqs: 10
@@ -28,8 +28,8 @@ outfmt: 6
 out_columns: "qseqid qacc qlen sseqid sacc slen stitle qstart qend sstart send length evalue bitscore pident qcovs nident mismatch positive gaps qframe sframe staxids sskingdoms"
 
 # Parse BLAST parameters
-silva_taxdb: "/home/codewizard/Documents/projects/Metagenomics_Pipeline/taxonomy/silva_taxonomy_v132.sqlite"
-ncbi_taxdb: "/home/codewizard/Documents/projects/Metagenomics_Pipeline/taxonomy/ncbi_taxonomy.sqlite"
+silva_taxdb: "data/taxonomy/silva_taxonomy_v132.sqlite"
+ncbi_taxdb: "data/taxonomy/ncbi_taxonomy.sqlite"
 percent_identity_threshold: 80
 query_coverage_threshold: 80
 
