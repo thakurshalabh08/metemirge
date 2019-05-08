@@ -16,7 +16,7 @@ Output: ???
 To use this pipeline, clone this repository into your project directory using the following command:
 
 ```
-git clone https://github.com/alanaschick/metemirge.git projectname
+git clone https://github.com/SycuroLab/metemirge.git
 ```
 
 Note: you need to have snakemake installed in order to dun this. To install snakemake using conda, run the following line:
@@ -84,7 +84,7 @@ Note: the file `cluster.json` contains the parameters for the LSF job submission
 
 ## Results and log files
 
-All output files will be placed in the `results` directory and logs of each rule/process will be written to the `logs` directory.
+All output files for each sample will be placed in the `output/<project-dir>/<sample-dir>` directory and logs of each rule/process will be written to the `logs` directory.
 
 ## Pipeline summary
 
