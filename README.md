@@ -38,15 +38,15 @@ The numerical parameter values should be written without an quotes.
 | Parameters | Description |
 | ---------- | ----------- |
 | General Parameters |
-| list_files | The file path containing list of sample names or ids <string> |
-| input_dir | The directory path for input fastq files <string> |
-| project_dir | The directory path for the project directory <string> |
+| list_files | The file path containing list of sample names or ids (string) |
+| input_dir | The directory path for input fastq files (string) |
+| project_dir | The directory path for the project directory (string) |
 | Cluster Parameters |
-| num_threads | Specify number of threads to use for the analysis. <integer> |
+| num_threads | Specify number of threads to use for the analysis. (integer) |
 | Emirge Parameters |
-| fasta_db | Specify full path to the reference fasta file for bowtie <string> |
-| bowtie_db | Specify full path to the reference bowtie index file <string> |
-| max_read_length | Specify maximum read length for the samples <integer> |
+| fasta_db | Specify full path to the reference fasta file for bowtie (string) |
+| bowtie_db | Specify full path to the reference bowtie index file (string) |
+| max_read_length | Specify maximum read length for the samples (integer) |
 | insert_mean | Specify mean value for the insert size <integer> |
 | insert_stddev | Specify standard deviation value for the insert size <decimal> |
 | num_iter | Specify number of iteration for EMIRGE as an integer <integer> |
