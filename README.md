@@ -47,25 +47,25 @@ The numerical parameter values should be written without an quotes.
 | fasta_db | Specify full path to the reference fasta file for bowtie (string) |
 | bowtie_db | Specify full path to the reference bowtie index file (string) |
 | max_read_length | Specify maximum read length for the samples (integer) |
-| insert_mean | Specify mean value for the insert size <integer> |
-| insert_stddev | Specify standard deviation value for the insert size <decimal> |
-| num_iter | Specify number of iteration for EMIRGE as an integer <integer> |
-| num_iter_str | Specify number of iteration for EMIRGE as a string within " " <string> |
+| insert_mean | Specify mean value for the insert size (integer) |
+| insert_stddev | Specify standard deviation value for the insert size (decimal) |
+| num_iter | Specify number of iteration for EMIRGE as an integer (integer) |
+| num_iter_str | Specify number of iteration for EMIRGE as a string within " " (string) |
 | Blast Parameters |
-| blast_db_dir | The base directory path for the blast databases <string> |
-| databases | Specify list of blast databases as ["db1", "db2"] <list> |
-| evalue | Specify blast evalue cutoff <decimal / scientific> |
-| max_target_seqs | Specify maximum target sequences to report in the blast result <integer> |
-| outfmt | Specify blast output format. Analysis requires tabular output format. Default: 6 |
-| out_columns | Specify columns to be reported in the blast output. Should not be changed |
+| blast_db_dir | The base directory path for the blast databases (string) |
+| databases | Specify list of blast databases as ["db1", "db2"] (list) |
+| evalue | Specify blast evalue cutoff (decimal / scientific) |
+| max_target_seqs | Specify maximum target sequences to report in the blast result (integer) |
+| outfmt | Specify blast output format. Analysis requires tabular output format. Default: 6 (integer)|
+| out_columns | Specify columns to be reported in the blast output. Should not be changed (string) |
 | Blast Parsing Parameters |
-| silva_taxdb | The sqlite database file storing taxonomy information from silva database |
-| ncbi_taxdb | The sqlite database file storing taxonomy information from ncbi database |
-| percent_identity_threshold | Specify identity threshold for filtering hits <decimal> |
-| query_coverage_threhshold | Specify query coverage threshold for filtering hits <decimal> |
+| silva_taxdb | The sqlite database file storing taxonomy information from silva database (string) |
+| ncbi_taxdb | The sqlite database file storing taxonomy information from ncbi database (string) |
+| percent_identity_threshold | Specify identity threshold for filtering hits (decimal) |
+| query_coverage_threhshold | Specify query coverage threshold for filtering hits (decimal) |
 | Select Best-Hit Parameters |
-| db_priority | Specify list of blast databases in order of priority as ["db1", "db2"] <list> |
-| num_best_hit | Specify number of best hits to report from each database |
+| db_priority | Specify list of blast databases in order of priority as ["db1", "db2"] (list) |
+| num_best_hit | Specify number of best hits to report from each database (integer) |
 
 
 
