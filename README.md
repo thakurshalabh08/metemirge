@@ -31,13 +31,44 @@ See the [snakemake](https://bitbucket.org/johanneskoester/snakemake/wiki/Home) f
 
 This pipeline requires a config file, written in yaml, to run. Enter any custom parameters in `config.yaml`. This is the only file that should be modified before running the pipeline. 
 
+The string parameter value should be written within double quotes " ".
+
+The numerical parameter values should be written without an quotes.
+
 | Parameters | Description |
 | ---------- | ----------- |
 | General Parameters |
-| list_files | The file containing list of sample names or ids |
-| input_dir | The directory path for input fastq files |
-| project_dir | The directory path for the project directory |
+| list_files | The file path containing list of sample names or ids <string> |
+| input_dir | The directory path for input fastq files <string> |
+| project_dir | The directory path for the project directory <string> |
+| Cluster Parameters |
+| num_threads | Specify number of threads to use for the analysis. <integer> |
 | Emirge Parameters |
+| fasta_db | Specify full path to the reference fasta file for bowtie <string> |
+| bowtie_db | Specify full path to the reference bowtie index file <string> |
+| max_read_length | Specify maximum read length for the samples <integer> |
+| insert_mean | Specify mean value for the insert size <integer> |
+| insert_stddev | Specify standard deviation value for the insert size <decimal> |
+| num_iter | Specify number of iteration for EMIRGE as an integer <integer> |
+| num_iter_str | Specify number of iteration for EMIRGE as a string within " " <string> |
+| Blast Parameters |
+| blast_db_dir | The base directory path for the blast databases <string> |
+| databases | Specify list of blast databases as ["db1", "db2"] <list> |
+| evalue | Specify blast evalue cutoff <decimal / scientific> |
+| max_target_seqs | Specify maximum target sequences to report in the blast result <integer> |
+| outfmt | Specify blast output format. Analysis requires tabular output format. Default: 6 |
+| out_columns | Specify columns to be reported in the blast output. Should not be changed |
+| Blast Parsing Parameters |
+| silva_taxdb | The sqlite database file storing taxonomy information from silva database |
+| ncbi_taxdb | The sqlite database file storing taxonomy information from ncbi database |
+| percent_identity_threshold | Specify identity threshold for filtering hits <decimal> |
+| query_coverage_threhshold | Specify query coverage threshold for filtering hits <decimal> |
+| Select Best-Hit Parameters |
+| db_priority | Specify list of blast databases in order of priority as ["db1", "db2"] <list> |
+| num_best_hit | Specify number of best hits to report from each database |
+
+
+
 
 ## Running the pipeline on Synergy
 
