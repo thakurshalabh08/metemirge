@@ -96,21 +96,48 @@ All output files for each sample will be placed in the `output/<project-dir>/<sa
 
 **1) Reconstruct marker sequences using EMIRGE.**
 
-This runs EMIRGE program with `emirge.py` script for reconstructing marker sequences using reference sequence database.
+This step runs EMIRGE program with `emirge.py` script for reconstructing marker sequences using reference sequence database.
 
-Input: a) Filtered, cleaned, deinterleaved, paired-end fastq read files
-       b) Reference sequence database (fasta format)
-       c) Reference bowtie index file.
-
-Output: Reconstructed marker sequence file (fasta format)       
-
+```
+emirge.py {outdir} -1 {read1} -2 {read2} -f {fasta_db} -b {bowtie_db} -l {max_read_length} -i {insert_mean} -s {insert_stddev} -n {num_iter} -a {num_threads} --phred33
+```      
 
 **2) Rename marker sequence file.**
 
+This step renames the reconstructed marker sequence file from final EMIRGE iteration using `emirge_rename_fasta.py`.
+
+```
+emirge_rename_fasta.py {path_to_final_iteration_dir} > {renamed_output_file}
+```
+
 **3) Blast marker sequence against reference sequence databases.**
+
+This step perform BLAST for reconstructed marker sequences against reference blast databases.
+
+```
+python scripts/runBlast.py --prefix {sample_name} --query_file {query_file} --db_dir {blast_db_dir} --db_names {database_list} --output_dir {out_dir}  --evalue {evalue} --max_target_seq {max_target_seqs} --output_format 6 --output_columns "qseqid qacc qlen sseqid sacc slen stitle qstart qend sstart send length evalue bitscore pident qcovs nident mismatch positive gaps qframe sframe staxids sskingdoms"
+```
 
 **4) Parse Blast results.**
 
+This step parse tabular BLAST result to filter top-scoring hits within each database.
+
+```
+python scripts/runEmirgeParseBlast.py --prefix {sample_name} --blast_raw {blast_raw_result} --emirge_file {emirge_renamed_fasta_file} --identity_cutoff {percent_identity_threshold} --qcov_cutoff {query_coverage_threshold} --silva_taxadb {silva_taxdb} --ncbi_taxadb {ncbi_taxdb}
+```
+
 **5) Select best blast hit.**
 
+This step select best BLAST hit for each query from given list of blast databases based on specified database priority.
+
+```
+python scripts/runEmirgeSelectBlastHit.py --prefix {sample_name} --input_files {parsed_blast_result_files} --output_file {output_file} --priority_db {db_priority} --num_hits {num_best_hit}
+```
+
 **6) Prepare Input for Plot.**
+
+This step parse final best BLAST hit file for each sample and prepare input file for plotting taxonomic abundance in R.
+
+```
+python scripts/parseEmirgeForPlot.py --prefix {sample_name} --input_file {input_file} --output_file {output_file}
+```
