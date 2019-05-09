@@ -10,9 +10,9 @@ EMIRGE is a tool for reconstructing full-length marker gene sequences from micro
 Input: filtered and cleaned fastq files. 
 
 Output: 
-1) Reconstructed marker sequences
-2) Taxonomy assignment
-3) Taxonomic Relative abundance
+1) Reconstructed marker sequences (fasta format)
+2) Best BLAST hit for marker sequences from reference databases with taxonomic annotation.
+3) Taxonomic table for the sample with relative abundance of microbial composition.
 
 ## Installation
 
